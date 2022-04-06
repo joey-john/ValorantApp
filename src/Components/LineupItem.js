@@ -65,6 +65,7 @@ class LineupItem extends Component {
 								<Difficulty color={difficulty} />
 								{essential_icon}
 								{dart_side}
+								{dart_site}
 							</div>
 							<h2 className={classes.info_text}>{information}</h2>
 						</div>

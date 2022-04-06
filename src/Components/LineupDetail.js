@@ -109,13 +109,13 @@ const LineupDetail = (props) => {
 		dart_side = '';
 	}
 	if (site === "A Site") {
-		dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>A Site</div>;
+		dart_site = <div className={`${classes.icons} ${classes.site} $`}>A Site</div>;
 	} else if (site === "B Site") {
-		dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>B Site</div>;
+		dart_site = <div className={`${classes.icons} ${classes.site} $`}>B Site</div>;
 	} else if (site === "C Site") {
-		dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>C Site</div>;
+		dart_site = <div className={`${classes.icon} ${classes.site} $`}>C Site</div>;
 	} else if (site === "Mid") {
-		dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>Mid</div>;
+		dart_site = <div className={`${classes.icon} ${classes.site} $`}>Mid</div>;
 	} else {
 		dart_site = '';
 	}
@@ -143,6 +143,7 @@ const LineupDetail = (props) => {
 											<div>{difficulty_level}</div>
 											<div>{essential_icon}</div>
 											<div>{dart_side}</div>
+											<div>{dart_site}</div>
 										</div>
 										<div className={classes.bounces}>
 											<h3 className={classes.filter_titles}>Bounces</h3>
