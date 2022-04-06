@@ -21,6 +21,17 @@ class AppProvider extends Component {
 			defending: false,
 			attacking: false
 		},
+		selectedType: {
+			recon: false,
+			shock: false,
+			fake: false
+		},
+		selectedSite: {
+			Asite: false,
+			Bsite: false,
+			Csite: false,
+			mid: false
+		},
 		prevTitle: "",
 		prevInfo: "",
 		loading: true,
@@ -75,6 +86,17 @@ class AppProvider extends Component {
 				selectedSide: {
 					defending: false,
 					attacking: false
+				},
+				selectedType: {
+					recon: false,
+					shock: false,
+					fake: false
+				},
+				selectedSite: {
+					Asite: false,
+					Bsite: false,
+					Csite: false,
+					mid: false
 				},
 				newDetail: 0
 			};

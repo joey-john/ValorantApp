@@ -51,7 +51,7 @@ class Filter extends Component {
 									className={classes.filter}
 									style={{
 										backgroundColor: value.isEssential
-											? 'rgb(53,142,197)'
+											? 'rgb(255, 215, 0)'
 											: 'rgb(88, 88, 88)'
 									}}
 									onClick={() => value.toggleFilter('essential')}
@@ -79,6 +79,28 @@ class Filter extends Component {
 									onClick={() => value.toggleFilter('defending')}
 								>
 									Defending
+								</h1>
+								<h1
+									className={classes.filter}
+									style={{
+										backgroundColor: value.selectedType.recon
+											? 'rgb(99,56,126)'
+											: 'rgb(88, 88, 88)'
+									}}
+									onClick={() => value.toggleFilter('recon')}
+								>
+									Recon
+								</h1>
+								<h1
+									className={classes.filter}
+									style={{
+										backgroundColor: value.selectedType.shock
+											? 'rgb(99,56,126)'
+											: 'rgb(88, 88, 88)'
+									}}
+									onClick={() => value.toggleFilter('shock')}
+								>
+									Shock
 								</h1>
 							</div>
 						);

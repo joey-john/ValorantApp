@@ -19,6 +19,7 @@ const LineupDetail = (props) => {
 		essential,
 		difficulty,
 		side,
+		site,
 		image1,
 		image2,
 		result, 
