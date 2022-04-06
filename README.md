@@ -1,5 +1,5 @@
-# SovaLineups (Valorant website)
-
+# SovaLineups (Valorant Website)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9923327c-4661-4ea4-a543-8f9cc126b83f/deploy-status)](https://app.netlify.com/sites/shockdart/deploys)
 
 
 
@@ -12,7 +12,7 @@ This site is made as a personal project, as well as help others learn important 
 
 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9923327c-4661-4ea4-a543-8f9cc126b83f/deploy-status)](https://app.netlify.com/sites/shockdart/deploys)
+
 
 ### Demo
 
