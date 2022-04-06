@@ -87,6 +87,8 @@ Here's an example of how simple the syntax is for adding, removing or editing:
 		difficulty: 'Medium',
 
 		side: 'Defending',
+		
+		site: 'Mid',
 
 		essential: true,
 
