@@ -111,7 +111,7 @@ const LineupDetail = (props) => {
 	if (site === "A Site") {
 		dart_site = <div className={`${classes.icons} ${classes.site}`}>A Site</div>;
 	} else if (site === "B Site") {
-		dart_site = <div className={`${classes.icons} ${classes.site}`}>B Site</div>;
+		dart_site = <div className={`${classes.icons} ${classes.site}`}>C Site</div>;
 	} else if (site === "C Site") {
 		dart_site = <div className={`${classes.icon} ${classes.site}`}>C Site</div>;
 	} else if (site === "Mid") {
