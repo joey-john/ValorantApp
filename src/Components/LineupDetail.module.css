@@ -303,14 +303,17 @@
 	padding: 3px 5px 3px 5px;
 	border-radius: 5px;
 	color: white;
-	background-color: rgb(53, 142, 197);
+	background-color: rgb(255, 215, 0);
 	font-size: 1.5rem;
 }
 .attacking {
-	background-color: rgb(255, 123, 0);
+	background-color: rgb(255, 0, 0);
 }
 .defending {
 	background-color: rgb(99, 56, 126);
+}
+.site {
+	background-color: rgb(146, 143, 140);
 }
 .colorGreen {
 	background-color: rgb(98, 163, 29);

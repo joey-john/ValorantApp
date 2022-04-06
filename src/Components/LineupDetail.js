@@ -29,6 +29,7 @@ const LineupDetail = (props) => {
 	} = props.lineupdetails;
 	let essential_icon;
 	let dart_side;
+	let dart_site;
 	if (typeof video === 'undefined') {
 		video = '429164524';
 	}
@@ -107,6 +108,18 @@ const LineupDetail = (props) => {
 	} else {
 		dart_side = '';
 	}
+	if (site === "A Site") {
+		dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>A Site</div>;
+	} else if (site === "B Site") {
+		dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>B Site</div>;
+	} else if (site === "C Site") {
+		dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>C Site</div>;
+	} else if (site === "Mid") {
+		dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>Mid</div>;
+	} else {
+		dart_site = '';
+	}
+
 	return (
 		<div ref={(el) => (container = el)} className={classes.container}>
 			<AppConsumer>

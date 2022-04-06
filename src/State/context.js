@@ -73,34 +73,6 @@ class AppProvider extends Component {
 		}
 		
 		this.setState(() => {
-			if (map === 'haven') {
-				return {
-					lineups: tempLineups,
-					currentMap: setStateMap,
-					detailLineup: setStateDetail,
-					selectedFilters: {
-						easy: false,
-						medium: false,
-						hard: false
-					},
-					isEssential: false,
-					selectedSide: {
-						defending: false,
-						attacking: false
-					},
-					selectedType: {
-						recon: false,
-						shock: false,
-						fake: false
-					},
-					selectedSite: {
-						Asite: false,
-						Bsite: false,
-						mid: false
-					},
-					newDetail: 0
-				};
-			} 
 			return {
 				lineups: tempLineups,
 				currentMap: setStateMap,

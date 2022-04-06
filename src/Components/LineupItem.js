@@ -21,10 +21,11 @@ class LineupItem extends Component {
 			}
 			return title;
 		};
-		const { id, title, info, essential, difficulty, isActive, side } = this.props.lineup;
+		const { id, title, info, essential, difficulty, isActive, side, site } = this.props.lineup;
 		let essential_icon;
 		let activeclass;
 		let dart_side;
+		let dart_site;
 		let information = limitInfo(info);
 		if (essential === true) {
 			essential_icon = <div className={classes.essential_icon}>Essential</div>;
@@ -33,11 +34,23 @@ class LineupItem extends Component {
 			activeclass = classes.active;
 		}
 		if (side === 'Attacking') {
-			dart_side = <div className={`${classes.essential_icon} ${classes.attacking}`}>Attacking</div>;
+			dart_side = <div className={`${classes.essential_icon} ${classes.attacking} $`}>Attacking</div>;
 		} else if (side === 'Defending') {
 			dart_side = <div className={`${classes.essential_icon} ${classes.defending}`}>Defending</div>;
 		} else {
 			dart_side = '';
+		}
+
+		if (site === "A Site") {
+			dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>A Site</div>;
+		} else if (site === "B Site") {
+			dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>B Site</div>;
+		} else if (site === "C Site") {
+			dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>C Site</div>;
+		} else if (site === "Mid") {
+			dart_site = <div className={`${classes.essential_icon} ${classes.site} $`}>Mid</div>;
+		} else {
+			dart_site = '';
 		}
 
 		return (
