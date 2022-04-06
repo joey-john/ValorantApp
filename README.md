@@ -12,7 +12,7 @@ This site is made as a personal project, as well as help others learn important 
 
 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3136dde7-1155-401a-83a5-19da2c14294f/deploy-status)](https://app.netlify.com/sites/sovalineups/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9923327c-4661-4ea4-a543-8f9cc126b83f/deploy-status)](https://app.netlify.com/sites/shockdart/deploys)
 
 ### Demo
 
@@ -22,7 +22,7 @@ This site is made as a personal project, as well as help others learn important 
 
 
 
-[Live Site](https://sovalineups.com/)
+[Live Site](https://shockdart.netlify.app/)
 
 
 
