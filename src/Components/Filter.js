@@ -84,7 +84,7 @@ class Filter extends Component {
 									className={classes.filter}
 									style={{
 										backgroundColor: value.selectedType.recon
-											? 'rgb(40, 55, 71)'
+											? 'rgb(99,56,126)'
 											: 'rgb(88, 88, 88)'
 									}}
 									onClick={() => value.toggleFilter('recon')}
@@ -95,7 +95,7 @@ class Filter extends Component {
 									className={classes.filter}
 									style={{
 										backgroundColor: value.selectedType.shock
-											? 'rgb(40, 55, 71)'
+											? 'rgb(99,56,126)'
 											: 'rgb(88, 88, 88)'
 									}}
 									onClick={() => value.toggleFilter('shock')}

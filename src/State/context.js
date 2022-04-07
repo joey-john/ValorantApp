@@ -24,11 +24,12 @@ class AppProvider extends Component {
 		selectedType: {
 			recon: false,
 			shock: false,
+			fake: false
 		},
 		selectedSite: {
-			asite: false,
-			bsite: false,
-			csite: false,
+			Asite: false,
+			Bsite: false,
+			Csite: false,
 			mid: false
 		},
 		prevTitle: "",
@@ -89,11 +90,11 @@ class AppProvider extends Component {
 				selectedType: {
 					recon: false,
 					shock: false,
+					fake: false
 				},
 				selectedSite: {
-					asite: false,
-					bsite: false,
-					csite: false,
+					Asite: false,
+					Bsite: false,
 					mid: false
 				},
 				newDetail: 0
@@ -154,16 +155,6 @@ class AppProvider extends Component {
 			stateSelectedSide = {
 				attacking: false,
 				defending: false
-			};
-			selectedType = {
-				recon: false,
-				shock: false
-			};
-			selectedSite = {
-				asite: false,
-				bsite: false,
-				csite: false,
-				mid: false
 			};
 		} else if (filter === 'medium') {
 			setFilter = this.state.selectedFilters.medium;
@@ -229,13 +220,7 @@ class AppProvider extends Component {
 				attacking: false,
 				defending: true
 			};
-		} 
-
-
-
-
-
-
+		}
 		if (setFilter === false) {
 			const tempLineups = [];
 			let data_points = this.getCurrentMap();
