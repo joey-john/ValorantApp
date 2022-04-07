@@ -102,51 +102,6 @@ class Filter extends Component {
 								>
 									Shock
 								</h1>
-								<h1
-									className={classes.filter}
-									style={{
-										backgroundColor: value.selectedSite.asite
-											? 'rgb(99,56,126)'
-											: 'rgb(88, 88, 88)'
-									}}
-									onClick={() => value.toggleFilter('asite')}
-								>
-									Defending
-								</h1>
-								<h1
-									className={classes.filter}
-									style={{
-										backgroundColor: value.selectedSite.bsite
-											? 'rgb(40, 55, 71)'
-											: 'rgb(88, 88, 88)'
-									}}
-									onClick={() => value.toggleFilter('bsite')}
-								>
-									Recon
-								</h1>
-								<h1
-									className={classes.filter}
-									style={{
-										backgroundColor: value.selectedSite.acsite
-											? 'rgb(40, 55, 71)'
-											: 'rgb(88, 88, 88)'
-									}}
-									onClick={() => value.toggleFilter('csite')}
-								>
-									Shock
-								</h1>
-								<h1
-									className={classes.filter}
-									style={{
-										backgroundColor: value.selectedSite.mid
-											? 'rgb(40, 55, 71)'
-											: 'rgb(88, 88, 88)'
-									}}
-									onClick={() => value.toggleFilter('mid')}
-								>
-									Shock
-								</h1>
-
 							</div>
 						);
 					}}
