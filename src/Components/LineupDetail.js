@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import Badge from 'react-bootstrap/Badge';
 import { AppConsumer } from '../State/context.js';
 import classes from './LineupDetail.module.css';
 import '../Animation/detail.css';
@@ -111,7 +112,7 @@ const LineupDetail = (props) => {
 	if (site === "A Site") {
 		dart_site = <div className={`${classes.icons} ${classes.site}`}>A Site</div>;
 	} else if (site === "B Site") {
-		dart_site = <div className={`${classes.icons} ${classes.site}`}>C Site</div>;
+		dart_site = <span class="badge badge-primary">B Site</span>
 	} else if (site === "C Site") {
 		dart_site = <div className={`${classes.icon} ${classes.site}`}>C Site</div>;
 	} else if (site === "Mid") {
