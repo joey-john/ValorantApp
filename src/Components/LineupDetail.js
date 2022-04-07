@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import Badge from 'react-bootstrap/Badge';
 import { AppConsumer } from '../State/context.js';
 import classes from './LineupDetail.module.css';
 import '../Animation/detail.css';
