@@ -108,16 +108,22 @@ const LineupDetail = (props) => {
 	} else {
 		dart_side = '';
 	}
-	if (site === "A Site") {
-		dart_site = <div className={`${classes.icons} ${classes.site}`}>A Site</div>;
-	} else if (site === "B Site") {
-		dart_site = <div className={`${classes.icons} ${classes.site}`}>B Site</div>;
-	} else if (site === "C Site") {
-		dart_site = <div className={`${classes.icon} ${classes.site}`}>C Site</div>;
-	} else if (site === "Mid") {
-		dart_site = <div className={`${classes.icon} ${classes.site}`}>Mid</div>;
-	} else {
-		dart_site = '';
+
+	switch (dart_site) {
+		case 'A Site':
+			dart_site = <div className={`${classes.icons} ${classes.site}`}>A Site</div>;
+			break;
+		case 'B Site':
+			dart_site = <div className={`${classes.icons} ${classes.site}`}>B Site</div>;
+			break;
+		case 'C Site':
+			dart_site = <div className={`${classes.icon} ${classes.site}`}>C Site</div>;
+			break;
+		case 'Mid':
+			dart_site = <div className={`${classes.icon} ${classes.site}`}>Mid</div>;
+			break;
+		default:
+			dart_site = '';
 	}
 
 	return (
