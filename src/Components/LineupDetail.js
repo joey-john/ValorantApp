@@ -109,7 +109,7 @@ const LineupDetail = (props) => {
 		dart_side = '';
 	}
 
-	switch (dart_site) {
+	switch (site) {
 		case 'A Site':
 			dart_site = <div className={`${classes.icons} ${classes.site}`}>A Site</div>;
 			break;
