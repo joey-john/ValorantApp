@@ -193,16 +193,40 @@ class AppProvider extends Component {
 					if (item.difficulty === item_filter) {
 						tempLineups.push(item);
 					}
+					tempLineups[0].isActive = true;
+					this.setState(() => {
+						return {
+							lineups: tempLineups,
+							selectedFilters: stateFilters,
+							detailLineup: tempLineups[0]
+						};
+					});
 				}
 				if (filter === 'essential') {
 					if (item.essential === true) {
 						tempLineups.push(item);
 					}
+					tempLineups[0].isActive = true;
+					this.setState(() => {
+						return {
+							lineups: tempLineups,
+							isEssential: stateEssential,
+							detailLineup: tempLineups[0],
+						};
+					});
 				}
 				if (filter === 'attacking' || 'defending') {
 					if (item.side === item_filter) {
 						tempLineups.push(item);
 					}
+					tempLineups[0].isActive = true;
+					this.setState(() => {
+						return {
+							lineups: tempLineups,
+							detailLineup: tempLineups[0],
+							selectedSide: stateSelectedSide
+						};
+					});
 				}
 			});
 			tempLineups[0].isActive = true;
