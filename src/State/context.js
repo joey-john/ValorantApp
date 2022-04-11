@@ -191,19 +191,11 @@ class AppProvider extends Component {
 				hard: true
 			};
 		} 
-		else {
-			stateFilters = {
-				easy: false,
-				medium: false,
-				hard: false
-			};
-		}
+
 
 		if (filter === 'essential') {
 			setFilter = this.state.isEssential;
 			stateEssential = true;
-		} else {
-			stateEssential = false;
 		}
 		
 		if (filter === 'attacking') {
@@ -219,11 +211,6 @@ class AppProvider extends Component {
 			stateSelectedSide = {
 				attacking: false,
 				defending: true
-			};
-		} else {
-			stateSelectedSide = {
-				attacking: false,
-				defending: false
 			};
 		}
 
