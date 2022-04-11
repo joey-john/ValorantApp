@@ -139,9 +139,9 @@ class AppProvider extends Component {
 		let tempStateFilters = {};
 		let setFilter;
 		let item_filter;
-		let stateFilters = {};
-		let stateEssential;
-		let stateSelectedSide = {};
+		let stateFilters = this.state.stateFilters;
+		let stateEssential = this.state.isEssential;
+		let stateSelectedSide = this.state.selectedSide;
 
 		tempStateFilters = {
 			selectedFilters: {
