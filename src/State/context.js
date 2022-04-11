@@ -24,7 +24,6 @@ class AppProvider extends Component {
 		selectedType: {
 			recon: false,
 			shock: false,
-			fake: false
 		},
 		selectedSite: {
 			Asite: false,
@@ -90,7 +89,6 @@ class AppProvider extends Component {
 				selectedType: {
 					recon: false,
 					shock: false,
-					fake: false
 				},
 				selectedSite: {
 					Asite: false,
@@ -151,11 +149,6 @@ class AppProvider extends Component {
 				medium: false,
 				hard: false
 			};
-			stateEssential = false;
-			stateSelectedSide = {
-				attacking: false,
-				defending: false
-			};
 		} else if (filter === 'medium') {
 			setFilter = this.state.selectedFilters.medium;
 			item_filter = 'Medium';
@@ -163,11 +156,6 @@ class AppProvider extends Component {
 				easy: false,
 				medium: true,
 				hard: false
-			};
-			stateEssential = false;
-			stateSelectedSide = {
-				attacking: false,
-				defending: false
 			};
 		} else if (filter === 'hard') {
 			setFilter = this.state.selectedFilters.hard;
@@ -177,32 +165,12 @@ class AppProvider extends Component {
 				medium: false,
 				hard: true
 			};
-			stateEssential = false;
-			stateSelectedSide = {
-				attacking: false,
-				defending: false
-			};
 		} else if (filter === 'essential') {
 			setFilter = this.state.isEssential;
-			stateFilters = {
-				easy: false,
-				medium: false,
-				hard: false
-			};
 			stateEssential = true;
-			stateSelectedSide = {
-				attacking: false,
-				defending: false
-			};
 		} else if (filter === 'attacking') {
 			setFilter = this.state.selectedSide.attacking;
 			item_filter = 'Attacking';
-			stateFilters = {
-				easy: false,
-				medium: false,
-				hard: false
-			};
-			stateEssential = false;
 			stateSelectedSide = {
 				attacking: true,
 				defending: false
@@ -210,12 +178,6 @@ class AppProvider extends Component {
 		} else if (filter === 'defending') {
 			setFilter = this.state.selectedSide.defending;
 			item_filter = 'Defending';
-			stateFilters = {
-				easy: false,
-				medium: false,
-				hard: false
-			};
-			stateEssential = false;
 			stateSelectedSide = {
 				attacking: false,
 				defending: true
