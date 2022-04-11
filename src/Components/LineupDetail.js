@@ -125,7 +125,6 @@ const LineupDetail = (props) => {
 		default:
 			dart_site = '';
 	}
-	console.log(dart_site);
 
 	return (
 		<div ref={(el) => (container = el)} className={classes.container}>

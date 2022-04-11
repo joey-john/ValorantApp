@@ -183,6 +183,7 @@ class AppProvider extends Component {
 				defending: true
 			};
 		}
+		console.log(setFilter);
 		if (setFilter === false) {
 			const tempLineups = [];
 			let data_points = this.getCurrentMap();
