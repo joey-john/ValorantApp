@@ -229,16 +229,6 @@ class AppProvider extends Component {
 					});
 				}
 			});
-			tempLineups[0].isActive = true;
-			this.setState(() => {
-				return {
-					lineups: tempLineups,
-					selectedFilters: stateFilters,
-					isEssential: stateEssential,
-					detailLineup: tempLineups[0],
-					selectedSide: stateSelectedSide
-				};
-			});
 		}
 		if (setFilter === true) {
 			this.resetPage();
