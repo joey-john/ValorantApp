@@ -250,6 +250,7 @@ class AppProvider extends Component {
 					}
 				}
 			});
+			console.log(tempLineups);
 			tempLineups[0].isActive = true;
 			this.setState(() => {
 				return {
