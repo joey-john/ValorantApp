@@ -190,10 +190,23 @@ class AppProvider extends Component {
 				medium: false,
 				hard: true
 			};
-		} else if (filter === 'essential') {
+		} 
+		else {
+			stateFilters = {
+				easy: false,
+				medium: false,
+				hard: false
+			};
+		}
+
+		if (filter === 'essential') {
 			setFilter = this.state.isEssential;
 			stateEssential = true;
-		} else if (filter === 'attacking') {
+		} else {
+			stateEssential = false;
+		}
+		
+		if (filter === 'attacking') {
 			setFilter = this.state.selectedSide.attacking;
 			item_filter = 'Attacking';
 			stateSelectedSide = {
@@ -207,8 +220,14 @@ class AppProvider extends Component {
 				attacking: false,
 				defending: true
 			};
+		} else {
+			stateSelectedSide = {
+				attacking: false,
+				defending: false
 		}
+
 		console.log(setFilter);
+		
 		if (setFilter === false) {
 			const tempLineups = [];
 			let data_points = this.getCurrentMap();
