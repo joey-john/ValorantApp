@@ -136,11 +136,36 @@ class AppProvider extends Component {
 	};
 	// Toggles filters, takes easy, medium, hard, essential, attacking, defending as parameters
 	toggleFilter = (filter) => {
+		let tempStateFilters = {};
 		let setFilter;
 		let item_filter;
 		let stateFilters = {};
 		let stateEssential;
 		let stateSelectedSide = {};
+
+		tempStateFilters = {
+			selectedFilters: {
+				easy: false,
+				medium: false,
+				hard: false
+			},
+			isEssential: false,
+			selectedSide: {
+				defending: false,
+				attacking: false
+			},
+			selectedType: {
+				recon: false,
+				shock: false,
+			},
+			selectedSite: {
+				Asite: false,
+				Bsite: false,
+				Csite: false,
+				mid: false
+			},
+		}
+
 		if (filter === 'easy') {
 			setFilter = this.state.selectedFilters.easy;
 			item_filter = 'Easy';
@@ -193,41 +218,27 @@ class AppProvider extends Component {
 					if (item.difficulty === item_filter) {
 						tempLineups.push(item);
 					}
-					tempLineups[0].isActive = true;
-					this.setState(() => {
-						return {
-							lineups: tempLineups,
-							selectedFilters: stateFilters,
-							detailLineup: tempLineups[0]
-						};
-					});
 				}
 				if (filter === 'essential') {
 					if (item.essential === true) {
 						tempLineups.push(item);
 					}
-					tempLineups[0].isActive = true;
-					this.setState(() => {
-						return {
-							lineups: tempLineups,
-							isEssential: stateEssential,
-							detailLineup: tempLineups[0],
-						};
-					});
 				}
 				if (filter === 'attacking' || 'defending') {
 					if (item.side === item_filter) {
 						tempLineups.push(item);
 					}
-					tempLineups[0].isActive = true;
-					this.setState(() => {
-						return {
-							lineups: tempLineups,
-							detailLineup: tempLineups[0],
-							selectedSide: stateSelectedSide
-						};
-					});
 				}
+			});
+			tempLineups[0].isActive = true;
+			this.setState(() => {
+				return {
+					lineups: tempLineups,
+					selectedFilters: stateFilters,
+					isEssential: stateEssential,
+					detailLineup: tempLineups[0],
+					selectedSide: stateSelectedSide
+				};
 			});
 		}
 		if (setFilter === true) {
