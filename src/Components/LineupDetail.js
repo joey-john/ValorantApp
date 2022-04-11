@@ -111,7 +111,7 @@ const LineupDetail = (props) => {
 
 	switch (site) {
 		case 'A Site':
-			dart_site = <div className={`${classes.icons} ${classes.site}`}>A Site</div>;
+			dart_site = <span class="w3-tag w3-padding w3-small w3-round w3-red w3-center"> A Site </span>
 			break;
 		case 'B Site':
 			dart_site = <div className={`${classes.icons} ${classes.site}`}>B Site</div>;
