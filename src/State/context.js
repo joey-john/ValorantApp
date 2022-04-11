@@ -239,12 +239,12 @@ class AppProvider extends Component {
 						tempLineups.push(item);
 					}
 				}
-				else if (filter === 'essential') {
+				if (filter === 'essential') {
 					if (item.essential === true) {
 						tempLineups.push(item);
 					}
 				}
-				else if (filter === 'attacking' || 'defending') {
+				if (filter === 'attacking' || 'defending') {
 					if (item.side === item_filter) {
 						tempLineups.push(item);
 					}
