@@ -111,7 +111,7 @@ const LineupDetail = (props) => {
 
 	switch (site) {
 		case 'A Site':
-			dart_site = <span className={`${classes.icons} ${classes.site}`}>B Site</span>;
+			dart_site = <div className={`${classes.icons} ${classes.site}`}>A Site</div>;
 			break;
 		case 'B Site':
 			dart_site = <div className={`${classes.icons} ${classes.site}`}>B Site</div>;
@@ -125,6 +125,7 @@ const LineupDetail = (props) => {
 		default:
 			dart_site = '';
 	}
+	console.log(dart_site);
 
 	return (
 		<div ref={(el) => (container = el)} className={classes.container}>
