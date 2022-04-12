@@ -271,7 +271,7 @@ class AppProvider extends Component {
 			let data_points = this.getCurrentMap();
 			
 			const filters = itemFilters.filter(Boolean);
-			console.log("Filters: " + filters);
+			console.log(filters);
 			
 
 			let tempLineups = data_points.filter((item) => {
@@ -285,7 +285,7 @@ class AppProvider extends Component {
 				if (itemFilters[2]) {
 					tags = tags.concat(item.side)
 				}
-				console.log("tags: " + tags);
+				console.log(tags);
 				return itemFilters.every(f => tags.includes(f));
 			});
 
