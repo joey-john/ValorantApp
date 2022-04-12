@@ -136,12 +136,17 @@ class AppProvider extends Component {
 	};
 	// Toggles filters, takes easy, medium, hard, essential, attacking, defending as parameters
 	toggleFilter = (filter) => {
-		let tempStateFilters = {};
+		const itemFilters = ['', false, ''];
+		var tempStateFilters = {};
+		let tempStateFiltersValues;
+		let tempStateFiltersBool;
+
+
 		let setFilter;
 		let item_filter;
-		let stateFilters = this.state.stateFilters;
-		let stateEssential = this.state.isEssential;
-		let stateSelectedSide = this.state.selectedSide;
+		let stateFilters = {};
+		let stateEssential;
+		let stateSelectedSide = {};
 
 		tempStateFilters = {
 			selectedFilters: {
@@ -166,90 +171,147 @@ class AppProvider extends Component {
 			},
 		}
 
-		if (filter === 'easy') {
-			setFilter = this.state.selectedFilters.easy;
-			item_filter = 'Easy';
-			stateFilters = {
-				easy: true,
-				medium: false,
-				hard: false
-			};
-		} else if (filter === 'medium') {
-			setFilter = this.state.selectedFilters.medium;
-			item_filter = 'Medium';
-			stateFilters = {
-				easy: false,
-				medium: true,
-				hard: false
-			};
-		} else if (filter === 'hard') {
-			setFilter = this.state.selectedFilters.hard;
-			item_filter = 'Hard';
-			stateFilters = {
-				easy: false,
-				medium: false,
-				hard: true
-			};
-		} 
+		// selectedFilters (Easy, Medium, Hard)
+		switch (filter) {
+			case 'easy':
+				if (!this.state.selectedFilters.easy) {
+					tempStateFilters.stateFilters = {
+						easy: true,
+						medium: false,
+						hard: false
+					};
+					itemFilters[0] = 'Easy';
+				} 	
+				break;
+			case 'medium':
+				if (!this.state.selectedFilters.medium) {
+					tempStateFilters.stateFilters = {
+						easy: false,
+						medium: true,
+						hard: false
+					};
+					itemFilters[0] = 'Medium';
+				} 
+				break;
+			case 'hard':
+				if (!this.state.selectedFilters.hard) {
+					tempStateFilters.stateFilters = {
+						easy: false,
+						medium: false,
+						hard: true
+					};
+					itemFilters[0] = 'Hard';
+				} 
+				break;
+		}
+
+		// if (filter === 'easy') {
+		// 	setFilter = this.state.selectedFilters.easy;
+		// 	item_filter = 'Easy';
+		// 	tempStateFilters.stateFilters = {
+		// 		easy: true,
+		// 		medium: false,
+		// 		hard: false
+		// 	};
+		// } else if (filter === 'medium') {
+		// 	setFilter = this.state.selectedFilters.medium;
+		// 	item_filter = 'Medium';
+		// 	tempStateFilters.stateFilters = {
+		// 		easy: false,
+		// 		medium: true,
+		// 		hard: false
+		// 	};
+		// } else if (filter === 'hard') {
+		// 	setFilter = this.state.selectedFilters.hard;
+		// 	item_filter = 'Hard';
+		// 	tempStateFilters.stateFilters = {
+		// 		easy: false,
+		// 		medium: false,
+		// 		hard: true
+		// 	};
+		// } 
 
 
 		if (filter === 'essential') {
-			setFilter = this.state.isEssential;
-			stateEssential = true;
+			if (!this.state.isEssential) {
+				itemFilters[1] = true;
+			}
+			tempStateFilters.stateEssential = true;
 		}
+
 		
 		if (filter === 'attacking') {
-			setFilter = this.state.selectedSide.attacking;
-			item_filter = 'Attacking';
-			stateSelectedSide = {
-				attacking: true,
-				defending: false
-			};
-		} else if (filter === 'defending') {
-			setFilter = this.state.selectedSide.defending;
-			item_filter = 'Defending';
-			stateSelectedSide = {
-				attacking: false,
-				defending: true
-			};
+			if (!this.state.selectedSide) {
+				tempStateFilters.stateSelectedSide = {
+					attacking: true,
+					defending: false
+				};
+				itemFilters[2] = 'Attacking';
+			}
+		}
+		else if (filter === 'defending') {
+			if (!this.state.selectedSide) {
+				tempStateFilters.stateSelectedSide = {
+					attacking: false,
+					defending: true
+				};
+				itemFilters[2] = 'Defending';
+			}
 		}
 
-		console.log(setFilter);
+		tempStateFiltersValues = Object.values(tempStateFilters);
+		tempStateFiltersBool = tempStateFiltersValues.every(element => element);
 
-		if (setFilter === false) {
-			const tempLineups = [];
+		console.log(tempStateFilters);
+		console.log("ItemFilters: " + itemFilters);
+
+		let filteredArr = data.filter((user) => {
+			const tags = [user.level, user.role].concat(user.tools, user.languages);
+			return filters.every(f => tags.includes(f));
+		  });
+		  console.log(filteredArr);
+
+
+		if (tempStateFiltersBool) {
+			// const tempLineups = [];
 			let data_points = this.getCurrentMap();
-			data_points.forEach((item) => {
-				item.isActive = false;
-				if (filter === 'easy' || 'medium' || 'hard') {
-					if (item.difficulty === item_filter) {
-						tempLineups.push(item);
-					}
+			
+			const filters = itemFilters.filter(Boolean);
+			console.log("Filters: " + filters);
+			
+
+			let tempLineups = data_points.filter((item) => {
+				var tags = [];
+				if (itemFilters[0]) {
+					tags = tags.concat(item.difficulty)
 				}
-				if (filter === 'essential') {
-					if (item.essential === true) {
-						tempLineups.push(item);
-					}
+				if (itemFilters[1]) {
+					tags = tags.concat(item.essential)
 				}
-				if (filter === 'attacking' || 'defending') {
-					if (item.side === item_filter) {
-						tempLineups.push(item);
-					}
+				if (itemFilters[2]) {
+					tags = tags.concat(item.side)
 				}
+				console.log("tags: " + tags);
+				return itemFilters.every(f => tags.includes(f));
 			});
+
+
+			console.log("TempLineups");
 			console.log(tempLineups);
+
 			tempLineups[0].isActive = true;
+
 			this.setState(() => {
 				return {
 					lineups: tempLineups,
-					selectedFilters: stateFilters,
-					isEssential: stateEssential,
+					selectedFilters: tempStateFilters.stateFilters,
+					isEssential: tempStateFilters.stateEssential,
 					detailLineup: tempLineups[0],
-					selectedSide: stateSelectedSide
+					selectedSide: tempStateFilters.stateSelectedSide
 				};
 			});
 		}
-		if (setFilter === true) {
+		else {
 			this.resetPage();
 		}
 	};
