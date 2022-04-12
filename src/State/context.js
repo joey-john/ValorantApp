@@ -265,12 +265,6 @@ class AppProvider extends Component {
 		console.log(tempStateFilters);
 		console.log("ItemFilters: " + itemFilters);
 
-		let filteredArr = data.filter((user) => {
-			const tags = [user.level, user.role].concat(user.tools, user.languages);
-			return filters.every(f => tags.includes(f));
-		  });
-		  console.log(filteredArr);
-
 
 		if (tempStateFiltersBool) {
 			// const tempLineups = [];
