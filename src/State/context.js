@@ -260,7 +260,7 @@ class AppProvider extends Component {
 		}
 
 		tempStateFiltersValues = Object.values(tempStateFilters);
-		tempStateFiltersBool = tempStateFiltersValues.every(element => element);
+		tempStateFiltersBool = tempStateFiltersValues.some(x => x);
 
 		console.log(tempStateFilters);
 		console.log("ItemFilters: " + itemFilters);
