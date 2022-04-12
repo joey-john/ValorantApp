@@ -265,36 +265,73 @@ class AppProvider extends Component {
 		console.log(tempStateFilters);
 		console.log("ItemFilters: " + itemFilters);
 
-
+		// The Worlds Ugliest Code
 		if (tempStateFiltersBool) {
 			// const tempLineups = [];
+			
+			const tempLineups = [];
+
 			let data_points = this.getCurrentMap();
+			data_points.forEach((item) => {
+				item.isActive = false;
 			
-			const filters = itemFilters.filter(Boolean);
-			console.log(filters);
-			
-
-			let tempLineups = data_points.filter((item) => {
-				var tags = [];
 				if (itemFilters[0]) {
-					tags = tags.concat(item.difficulty)
+					if (itemFilters[1]) {
+						if (itemFilters[2]) {			// [T, T, T]
+							if ((item.difficulty === itemFilters[0]) && (item.essential === true) && (item.side === itemFilters[2])) {
+								tempLineups.push(item);
+							}
+						} 
+						else {							// [T, T, F]
+							if ((item.difficulty === itemFilters[0]) && (item.essential === true)) {
+								tempLineups.push(item);
+							}
+						}
+					} 
+					else {								
+						if (itemFilters[2]) {			// [T, F, T]
+							if ((item.difficulty === itemFilters[0]) && (item.side === itemFilters[2])) {
+								tempLineups.push(item);
+							}
+						} 
+						else {							// [T, F, F]
+							if ((item.difficulty === itemFilters[0])) {
+								tempLineups.push(item);
+							}
+						}
+					}
 				}
-				if (itemFilters[1]) {
-					tags = tags.concat(item.essential)
-				}
-				if (itemFilters[2]) {
-					tags = tags.concat(item.side)
-				}
-				console.log(tags);
-				return itemFilters.every(f => tags.includes(f));
-			});
+				else {
+					if (itemFilters[1]) {				
+						if (itemFilters[2]) {			// [F, T, T]
+							if ((item.essential === true) && (item.side === itemFilters[2])) {
+								tempLineups.push(item);
+							}
+						} 
+						else {							// [F, T, F]
+							if ((item.essential === true)) {
+								tempLineups.push(item);
+							}
+						}
+					} 
+					else {
+						if (itemFilters[2]) {			// [F, F, T]
+							if ((item.side === itemFilters[2])) {
+								tempLineups.push(item);
+							}
+						} 
+						else {							// [F, F, F]
+							// nothing
+						}
+					}
 
+				}
+			});
 
 			console.log("TempLineups");
 			console.log(tempLineups);
 
 			tempLineups[0].isActive = true;
-
 			this.setState(() => {
 				return {
 					lineups: tempLineups,
