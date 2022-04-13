@@ -336,9 +336,9 @@ class AppProvider extends Component {
 				return {
 					lineups: tempLineups,
 					selectedFilters: tempStateFilters.stateFilters,
-					isEssential: tempStateFilters.stateEssential,
+					isEssential: tempStateFilters.isEssential,
 					detailLineup: tempLineups[0],
-					selectedSide: tempStateFilters.stateSelectedSide
+					selectedSide: tempStateFilters.SelectedSide
 				};
 			});
 		}
