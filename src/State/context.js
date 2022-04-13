@@ -236,13 +236,13 @@ class AppProvider extends Component {
 			if (!this.state.isEssential) {
 				itemFilters[1] = true;
 			}
-			tempStateFilters.stateEssential = true;
+			tempStateFilters.isEssential = true;
 		}
 
 		
 		if (filter === 'attacking') {
 			if (!this.state.selectedSide) {
-				tempStateFilters.stateSelectedSide = {
+				tempStateFilters.selectedSide = {
 					attacking: true,
 					defending: false
 				};
@@ -251,7 +251,7 @@ class AppProvider extends Component {
 		}
 		else if (filter === 'defending') {
 			if (!this.state.selectedSide) {
-				tempStateFilters.stateSelectedSide = {
+				tempStateFilters.selectedSide = {
 					attacking: false,
 					defending: true
 				};
@@ -338,7 +338,7 @@ class AppProvider extends Component {
 					selectedFilters: tempStateFilters.stateFilters,
 					isEssential: tempStateFilters.isEssential,
 					detailLineup: tempLineups[0],
-					selectedSide: tempStateFilters.SelectedSide
+					selectedSide: tempStateFilters.selectedSide
 				};
 			});
 		}
