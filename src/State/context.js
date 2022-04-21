@@ -241,7 +241,7 @@ class AppProvider extends Component {
 
 		
 		if (filter === 'attacking') {
-			if (!this.state.selectedSide) {
+			if (!this.state.selectedSide.attacking) {
 				tempStateFilters.selectedSide = {
 					attacking: true,
 					defending: false
@@ -250,7 +250,7 @@ class AppProvider extends Component {
 			}
 		}
 		else if (filter === 'defending') {
-			if (!this.state.selectedSide) {
+			if (!this.state.selectedSide.defending) {
 				tempStateFilters.selectedSide = {
 					attacking: false,
 					defending: true
