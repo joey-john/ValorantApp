@@ -264,7 +264,7 @@ class AppProvider extends Component {
 
 		console.log(tempStateFilters);
 		console.log("ItemFilters: " + itemFilters);
-
+		console.log("TempStateFiltersBool" + tempStateFiltersBool)
 		// The Worlds Ugliest Code
 		if (tempStateFiltersBool) {
 			// const tempLineups = [];
